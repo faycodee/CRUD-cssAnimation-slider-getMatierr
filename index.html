@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="package/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link rel="icon" href="img/logo.png" />
+
+    <title>Matier</title>
+  </head>
+  <body>
+    <div class="home" id="home">
+      <nav>
+        <h2><span>Get</span>Matiere</h2>
+        <ul id="menuRow">
+          <li><a href="#home" id="ho">Home</a></li>
+          <li><a href="#matiere" id="ma">Matiere</a></li>
+          <li><a href="#panier" id="pa">Panier de collection</a></li>
+          <li><a href="#Revieus" id="re">Revieus</a></li>
+          <li><a href="#Sign" id="si">Sign-up</a></li>
+        </ul>
+        <img src="img/menu.png" id="imgmneu" onclick="tomenubar()" />
+      </nav>
+
+      <div class="container-1">
+        <div id="container1-text">
+          <h1>Hello !</h1>
+          <p>
+            Bienvenue sur notre site GetMatiere pour apprendre tous les matiere
+            qui vous intéressent. Nous sommes là pour vous aider à acquérir une
+            compétence recherchée sur le marché du travail, à développer vos
+            compétences en programmation et en communication, à trouver un
+            emploi qui vous convient et à gagner beaucoup d'argent. Vous pouvez
+            également créer votre propre cours sur notre site web.
+          </p>
+        </div>
+        <div id="container1-img">
+          <!-- <img src="img/Hello-cuate (1).svg" alt="" /> -->
+          <img src="img/Hello1.png" id="Hello1" />
+          <img src="img/Hello2.png" id="Hello2" />
+          <img src="img/Hello3.png" id="Hello3" />
+        </div>
+      </div>
+    </div>
+    <div class="matiere" id="matiere">
+      <div id="conti2" class="">
+        <div id="container2-text">
+          <div>
+            <button id="autre" onclick="">
+              Je veux créer mon propre cours
+            </button>
+          </div>
+          <div><h1>choisissez votre matiere</h1></div>
+        </div>
+        <div id="container2-select">
+          <label for="nom"> Nom du Matiere :</label>
+
+          <select id="matier" readonly>
+            <option value="00" selected></option>
+            <optgroup label="Langages de programmation">
+              <option value="0">Html</option>
+              <option value="1">Css</option>
+              <option value="2">JavaScript</option>
+              <option value="3">Python</option>
+              <option value="4">Php</option>
+            </optgroup>
+            <optgroup label="Langues Communication ">
+              <option value="5">Français</option>
+              <option value="6">Arabic</option>
+              <option value="7">English</option>
+            </optgroup>
+          </select>
+        </div>
+        <div id="container2-table">
+          <table>
+            <tr>
+              <td><label for=""> Objectif de cet Matiere :</label></td>
+              <td>
+                <textarea
+                  type="text"
+                  readonly
+                  id="objc"
+                  cols="35"
+                  rows="3"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><label for=""> Nombre d'heures de cet Matiere :</label></td>
+              <td><input type="number" readonly id="nbrh" /></td>
+            </tr>
+            <tr>
+              <td><label for=""> Coefficient de cet Matiere :</label></td>
+              <td><input type="number" readonly id="m3ml" /></td>
+            </tr>
+            <tr>
+              <td><label for=""> Prix (EUR):</label></td>
+              <td><input type="text" readonly id="prix" /></td>
+            </tr>
+          </table>
+        </div>
+        <div id="buttons" class="container-fluid m-5">
+          <button onclick="ajout()">Ajout</button>
+        </div>
+      </div>
+      <div id="conti2creer" class="">
+        <div id="container2-text">
+          <div>
+            <button id="autre2" onclick="">Je veux achte un cours</button>
+          </div>
+          <div><h1>Ajouter votre matiere</h1></div>
+        </div>
+        <div id="container2-select">
+          <label for="nom"> Nom du Matiere :</label>
+          <input type="text" required id="matier2" />
+        </div>
+        <div id="container2-table">
+          <table>
+            <tr>
+              <td><label for=""> Objectif de cet Matiere :</label></td>
+              <td>
+                <textarea
+                  type="text"
+                  required
+                  id="objc2"
+                  cols="35"
+                  rows="3"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><label for=""> Nombre d'heures de cet Matiere :</label></td>
+              <td><input type="number" required id="nbrh2" /></td>
+            </tr>
+            <tr>
+              <td><label for=""> Coefficient de cet Matiere :</label></td>
+              <td><input type="number" required id="m3ml2" /></td>
+            </tr>
+            <tr>
+              <td><label for=""> Prix (EUR):</label></td>
+              <td><input type="number" required id="prix2" /></td>
+            </tr>
+            <tr>
+              <td><label for=""> Placez votre matiere :</label></td>
+              <td><input type="file" required id="file2" /></td>
+            </tr>
+          </table>
+        </div>
+        <div id="buttons" class="container-fluid m-5">
+          <button id="savem" onclick="Savemodification()">
+            Save Modification
+          </button>
+          <button onclick="ajout()">Ajout</button>
+        </div>
+      </div>
+    </div>
+    <div class="panier" id="panier">
+      <div id="conti3">
+        <div id="conti3-table">
+          <h1>Panier de collection</h1>
+          <table id="table"></table>
+        </div>
+        <img id="buttonsimg" src="img/circle.jpg" alt="" />
+        <div class="buttons">
+          <button id="affi" onclick="afficher()">Affichage</button>
+          <button id="supp" onclick="SupprimerTout()">Supprimer tout</button>
+        </div>
+      </div>
+      <div id="contcreer3">
+        <div id="conti3-table">
+          <h1>création collection</h1>
+          <table id="table2"></table>
+        </div>
+        <img id="buttonsimg2" src="img/circle.jpg" alt="" />
+        <button id="affi2" onclick="afficher()">Affichage</button>
+        <button id="supp2" onclick="SupprimerTout()">Supprimer tout</button>
+      </div>
+    </div>
+    <div class="Revieus" id="Revieus">
+      <h1>Revieus</h1>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profi0l.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>simo</h3>
+                <div class="stars">
+                  <img src="img/rating4.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil1.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>faycal</h3>
+                <div class="stars">
+                  <img src="img/rating5.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil2.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>ahmed</h3>
+                <div class="stars">
+                  <img src="img/rating3.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil6.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>taha</h3>
+                <div class="stars">
+                  <img src="img/rating5.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil3.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>youssef</h3>
+                <div class="stars">
+                  <img src="img/rating4.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil4.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>abdlah</h3>
+                <div class="stars">
+                  <img src="img/rating5.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
+              similique deserunt aliquam eveniet numquam corporis. Unde tenetur,
+              expedita alias, error impedit atque porro excepturi maiores
+              quaerat quam, labore dolor magni!
+            </p>
+            <div class="user">
+              <img src="img/profil5.jpg" alt="" class="profil" />
+              <div class="user-info">
+                <h3>yassin</h3>
+                <div class="stars">
+                  <img src="img/rating5.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="Sign" id="Sign">
+      <div class="contiimg">
+        <!-- <img src="img/Sign in-pana.svg" alt="" width="400px" /> -->
+        <img src="img/Mobile1.png" id="Mobile1" />
+        <img src="img/Mobile3.png" id="Mobile3" />
+        <img src="img/Mobile2.png" id="Mobile2" />
+        <img src="img/Mobile4.png" id="Mobile4" />
+        <img src="img/Mobile5.png" id="Mobile5" />
+        <img src="img/Mobile6.png" id="Mobile6" />
+      </div>
+      <div class="contiform">
+        <div><h1>Sign-up</h1></div>
+        <div>
+          <form>
+            <table align="center" width="65%">
+              <tr>
+                <td>
+                  <label for="nom">Nom :</label>
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    pattern="^[A-Za-z\s]{1,}$"
+                    required
+                    name="nom"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="pre">Prenom :</label>
+                </td>
+
+                <td>
+                  <input type="text" required name="pre" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Ville">Ville :</label>
+                </td>
+
+                <td>
+                  <select name="Ville" id="Ville">
+                    <option value="Ville">Fes</option>
+                    <option value="Ville">Casablanca</option>
+                    <option value="Ville">Rabat</option>
+                    <option value="Ville">Tangier</option>
+                    <option value="Ville">Marrakesh</option>
+                    <option value="Ville">Salé</option>
+                    <option value="Ville">Meknes</option>
+                    <option value="Ville">Tetouan</option>
+                    <option value="Ville">Taza</option>
+                    <option value="Ville">Oujda</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Tel">Tel :</label>
+                </td>
+
+                <td>
+                  <input
+                    type="text"
+                    placeholder="+212-6-61-02-98-56"
+                    pattern="^\+212-(6|7)-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+                    name="Tel"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label for="Email">Email :</label>
+                </td>
+
+                <td>
+                  <input
+                    type="email"
+                    placeholder="email@gmail.com"
+                    pattern="[a-zA-Z0-9]+@[a-zA-Z]{3,}\.(com|ma|it|fr)"
+                    name="Email"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Date">Date de Naissance :</label>
+                </td>
+
+                <td>
+                  <input type="date" name="Date" />
+                </td>
+              </tr>
+            </table>
+            
+              <button type="reset" value="">annuler</button>
+              <button type="submit" value="">envoyer</button>
+     
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="package/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          650: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    </script>
+  </body>
+</html>
