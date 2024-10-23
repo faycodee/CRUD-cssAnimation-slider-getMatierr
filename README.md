@@ -9,4 +9,4 @@ Here I try to apply some methods IN JAVASCRIPT like:
 
 https://github.com/user-attachments/assets/4f8b18a6-bb14-4cc8-bb32-e0ba4011ef01
 
-
+![p3](https://github.com/user-attachments/assets/dcde2309-683a-4728-b0b0-604d19191c7a)
